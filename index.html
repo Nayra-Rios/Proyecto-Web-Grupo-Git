@@ -8,6 +8,7 @@
 <body>
 
     <h1>Proyecto Web - Grupo Git</h1>
+    <p id="bienvenida"></p>
     <p id="saludo"></p>
     <p>Este es un proyecto simple para practicar Git y GitHub.</p>
     <hr>
@@ -103,21 +104,38 @@
 
         actualizarReloj();
 
-        
-
-
         const hora = new Date().getHours();
         let saludo;
+        let mensaje;
 
         if (hora < 12) {
             saludo = "☀️ Buenos días";
+            mensaje = "¡Hora de brillar con tus commits!";
         } else if (hora < 18) {
             saludo = "🌤️ Buenas tardes";
+            mensaje = "¡A seguir aprendiendo y programando!";
         } else {
             saludo = "🌙 Buenas noches";
+            mensaje = "¡Tiempo de descansar y soñar con código!";
         }
 
-        document.getElementById("saludo").innerText = saludo + ", bienvenido al proyecto.";
+        document.getElementById("saludo").innerText = saludo + " — " + mensaje;
+
+        
+        function mostrarBienvenida() {
+        const texto = "✨ Bienvenid@ al Proyecto Web de las Girls! ✨";
+        const elemento = document.getElementById("bienvenida");
+        let i = 0;
+
+        const intervalo = setInterval(() => {
+            elemento.innerText = texto.slice(0, i);
+            i++;
+            if (i > texto.length) clearInterval(intervalo);
+        }, 60);
+        }
+
+
+        mostrarBienvenida();
     </script>
 
 
