@@ -3,20 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input {
+            width: 200px;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 <body>
 
-    <h2>Formulario de Login</h2>
+    <div class="login-box">
+        <h2>Formulario de Login</h2>
 
-    <form>
-        <input type="text" placeholder="Usuario"><br><br>
-        <input type="password" placeholder="Contraseña"><br><br>
-        <button type="submit">Ingresar</button>
-    </form>
+        <form>
+            <input type="text" placeholder="Usuario"><br><br>
+            <input type="password" placeholder="Contraseña"><br><br>
+            <button type="submit">Ingresar</button>
+        </form>
 
-    <br>
-    <a href="index.html">Volver al Inicio</a>
+        <br>
+        <a href="index.html">Volver al Inicio</a>
+    </div>
 
 </body>
 </html>
