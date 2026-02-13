@@ -65,3 +65,28 @@ a {
 a:hover {
     color: #1f618d;
 }
+
+
+#saludoCute {
+    position: fixed;
+    top: 40%;
+    right: -250px;
+    background: #ffb6d9;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 20px 0 0 20px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    animation: entrar 1.5s ease forwards, flotar 2s ease-in-out infinite;
+}
+
+@keyframes entrar {
+    to {
+        right: 0;
+    }
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
