@@ -68,10 +68,20 @@
         }
 
         function contarClicks() {
-            contador++;
-            document.getElementById("contador").innerText = 
-                "Has hecho " + contador + " clics";
+        contador++;
+
+        const elemento = document.getElementById("contador");
+        elemento.innerText = "Has hecho " + contador + " clics";
+
+        if (contador >= 10) {
+            elemento.style.color = "red";
+            elemento.innerText += " 🔥 ¡Eres imparable!";
+        } else if (contador >= 5) {
+            elemento.style.color = "orange";
+        } else {
+            elemento.style.color = "black";
         }
+}
 
 
         function actualizarReloj() {
@@ -82,6 +92,8 @@
         setInterval(actualizarReloj, 1000);
 
         actualizarReloj();
+
+        
 
 
         const hora = new Date().getHours();
