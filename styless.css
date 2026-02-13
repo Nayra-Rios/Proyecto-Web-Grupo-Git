@@ -73,8 +73,9 @@ footer p {
 }
 
 .info-box:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    background-color: #f0f4ff; /* leve cambio de fondo */
 }
 
 .info-box h3 {
