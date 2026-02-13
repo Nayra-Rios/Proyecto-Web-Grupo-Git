@@ -1,51 +1,57 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(135deg, #7f8dc8, #9978ba); /* Fondo degradado */
-    margin: 0;                 /* NUEVO */
-    padding: 20px;             /* NUEVO */
+    background: linear-gradient(135deg, #f3e7f3, #eef2fb);
+    margin: 0;
+    padding: 20px;
 }
 
+/* Títulos */
 h1 {
     color: #2c3e50;
-    margin-bottom: 20px;       /* NUEVO */
+    margin-bottom: 20px;
 }
+
+/* Botones */
 button {
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #d28bb5; /* rosado elegante */
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 8px;        /* NUEVO */
-    transition: 0.3s;          /* NUEVO */
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);    /* NUEVO */
+    background-color: #c276a6;
+    transform: scale(1.05);
 }
 
-/* Nuevo estilo para la caja de login/proyecto */
+/* Caja principal (login / proyecto) */
 .login-box {
-    background: white;                       /* Fondo de la caja */
-    padding: 30px;                           /* Espacio interno */
-    border-radius: 15px;                     /* Bordes redondeados */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Sombra más visible */
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     text-align: center;
+    max-width: 400px;
+    margin: auto;
 }
 
+/* Footer */
 footer {
     margin-top: 40px;
     padding: 20px 0;
     font-size: 14px;
-    color: #f6f2f2;
+    color: #666;
 }
 
 footer p {
     margin: 5px 0;
 }
 
-
+/* Cajita rosada del login */
 .cajita-login {
     background-color: #fde2ea;
     padding: 25px;
@@ -54,15 +60,21 @@ footer p {
     margin-top: 15px;
 }
 
-
+/* Cajita de información del index */
 .info-box {
-    background-color: #f2f6fc;
-    border-left: 6px solid #3498db;
+    background-color: #f8f9fd;
+    border-left: 6px solid #d28bb5;
     padding: 20px;
     margin: 30px auto;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .info-box h3 {
@@ -75,21 +87,12 @@ footer p {
     color: #555;
 }
 
-.info-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
+/* Tip bonito del login */
 .login-tip {
     margin-top: 15px;
-    background-color: #fff5f8;
+    background-color: #fff0f6;
     padding: 12px;
     border-radius: 10px;
     font-size: 14px;
     color: #555;
 }
-
