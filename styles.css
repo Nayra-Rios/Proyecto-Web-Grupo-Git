@@ -154,3 +154,16 @@ footer p {
     box-shadow: 0 0 8px rgba(210, 139, 181, 0.5);
     transition: 0.3s ease;
 }
+/* Animación mensaje login */
+.mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(10px);
+}
+
+.mensaje.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
