@@ -167,3 +167,12 @@ footer p {
     opacity: 1;
     transform: translateY(0);
 }
+/* Animación del contador */
+#contador {
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+#contador.animar {
+    transform: scale(1.2);
+}

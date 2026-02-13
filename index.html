@@ -71,22 +71,24 @@
         }
 
         function contarClicks() {
-        contador++;
+            contador++;
 
-        const elemento = document.getElementById("contador");
-        elemento.innerText = "Has hecho " + contador + " clics";
+            const elemento = document.getElementById("contador");
+            elemento.innerText = "Has hecho " + contador + " clics";
 
-        if (contador >= 10) {
-            elemento.style.color = "red";
-            elemento.innerText += " 🔥 ¡Eres imparable!";
-        } else if (contador >= 5) {
-            elemento.style.color = "orange";
-        } else {
-            elemento.style.color = "black";
+            elemento.classList.add("animar");
+            setTimeout(() => elemento.classList.remove("animar"), 200);
+
+            if (contador >= 10) {
+                elemento.style.color = "red";
+                elemento.innerText += " 🔥 ¡Eres imparable!";
+            } else if (contador >= 5) {
+                elemento.style.color = "orange";
+            } else {
+                elemento.style.color = "black";
+            }
         }
 
-       
-        }
 
         function resetContador() {
             contador = 0;
