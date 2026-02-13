@@ -38,7 +38,7 @@
                 "Has hecho " + contador + " clics";
         }
 
-        // Reloj en tiempo real
+
         function actualizarReloj() {
             const ahora = new Date();
             document.getElementById("reloj").innerText = ahora.toLocaleTimeString();
@@ -47,7 +47,7 @@
         setInterval(actualizarReloj, 1000);
         actualizarReloj();
 
-        // Saludo dinámico
+
         const hora = new Date().getHours();
         let saludo;
 
