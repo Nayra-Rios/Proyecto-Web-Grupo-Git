@@ -61,6 +61,9 @@ function contarClicks() {
     } else {
         elemento.style.color = "black";
     }
+    if (contador >= 15) {
+    elemento.innerText += " 💎 Nivel experta desbloqueado!";
+    }
 }
 
 function resetContador() {
