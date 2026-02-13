@@ -147,3 +147,10 @@ footer p {
     transform: none;
     box-shadow: none;
 }
+/* Efecto focus en inputs del login */
+.login-box input:focus {
+    outline: none;
+    border: 2px solid #d28bb5;
+    box-shadow: 0 0 8px rgba(210, 139, 181, 0.5);
+    transition: 0.3s ease;
+}
