@@ -1,102 +1,55 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(135deg, #dfe9f3, #ffffff);
-    margin: 0;
-    padding: 40px 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2); /* Fondo degradado */
+    margin: 0;                 /* NUEVO */
+    padding: 20px;             /* NUEVO */
 }
 
 h1 {
     color: #2c3e50;
-    margin-bottom: 10px;
-    font-size: 32px;
+    margin-bottom: 20px;       /* NUEVO */
 }
-
-h2 {
-    margin-top: 30px;
-    color: #34495e;
-}
-
-h3 {
-    margin-top: 25px;
-    color: #555;
-}
-
-
-body > * {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-p {
-    color: #555;
-    font-size: 16px;
-}
-
-
 button {
     padding: 10px 20px;
-    background: linear-gradient(135deg, #3498db, #5dade2);
+    background-color: #3498db;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    margin: 10px 5px;
-    font-size: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;        /* NUEVO */
+    transition: 0.3s;          /* NUEVO */
 }
 
 button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    background-color: #2980b9;
+    transform: scale(1.05);    /* NUEVO */
 }
 
-a {
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-a:hover {
-    color: #1f618d;
-}
-
-
-#saludoCute {
-    position: fixed;
-    top: 35%;
-    right: 20px;
-    background: #ffe6f2;
-    padding: 15px;
-    border-radius: 20px;
+/* Nuevo estilo para la caja de login/proyecto */
+.login-box {
+    background: white;                       /* Fondo de la caja */
+    padding: 30px;                           /* Espacio interno */
+    border-radius: 15px;                     /* Bordes redondeados */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Sombra más visible */
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    animation: flotar 3s ease-in-out infinite;
 }
 
-#mascota {
-    font-size: 40px;
-    display: block;
-    animation: parpadear 3s infinite;
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    font-size: 14px;
+    color: #777;
 }
 
-#textoSaludo {
-    margin: 5px 0 0 0;
-    font-weight: bold;
-    color: #ff4da6;
+footer p {
+    margin: 5px 0;
 }
 
-@keyframes parpadear {
-    0%, 90%, 100% { content: "(◕‿◕)"; }
-    95% { content: "(◕‿◕)"; }
-}
 
-@keyframes flotar {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.cajita-login {
+    background-color: #fde2ea;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
 }
