@@ -2,8 +2,11 @@ function mostrarMensaje() {
     alert("Hola Nayra 😊 Este proyecto está funcionando correctamente!");
 }
 function actualizarFecha() {
-    const hoy = new Date();
-    document.getElementById("fecha").innerText = hoy.toLocaleDateString();
+    const dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+    const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+    const ahora = new Date();
+    const fechaTexto = `📅 Hoy es ${dias[ahora.getDay()]}, ${ahora.getDate()} de ${meses[ahora.getMonth()]} de ${ahora.getFullYear()}`;
+    document.getElementById("fecha").innerText = fechaTexto;
 }
 
 actualizarFecha();
