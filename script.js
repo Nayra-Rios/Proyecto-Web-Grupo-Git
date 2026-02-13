@@ -77,7 +77,7 @@ let mensaje;
 
 if (hora < 12) {
     saludo = "☀️ Buenos días";
-    mensaje = "¡Hora de brillar con tus commits!";
+    mensaje = "¡Hora de brillar con los commits!";
 } else if (hora < 18) {
     saludo = "🌤️ Buenas tardes";
     mensaje = "¡A seguir aprendiendo y programando!";
