@@ -69,24 +69,34 @@ a:hover {
 
 #saludoCute {
     position: fixed;
-    top: 40%;
-    right: -250px;
-    background: #ffb6d9;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 20px 0 0 20px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    animation: entrar 1.5s ease forwards, flotar 2s ease-in-out infinite;
+    top: 35%;
+    right: 20px;
+    background: #ffe6f2;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: flotar 3s ease-in-out infinite;
 }
 
-@keyframes entrar {
-    to {
-        right: 0;
-    }
+#mascota {
+    font-size: 40px;
+    display: block;
+    animation: parpadear 3s infinite;
+}
+
+#textoSaludo {
+    margin: 5px 0 0 0;
+    font-weight: bold;
+    color: #ff4da6;
+}
+
+@keyframes parpadear {
+    0%, 90%, 100% { content: "(◕‿◕)"; }
+    95% { content: "(◕‿◕)"; }
 }
 
 @keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }

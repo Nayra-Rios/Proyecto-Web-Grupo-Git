@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="styless.css">
 </head>
 <body>
-    <div id="saludoCute">🌸 Hola! Bienvenida 💖</div>
+    <div id="saludoCute">
+    <span id="mascota">(◕‿◕)</span>
+    <p id="textoSaludo">🌸 Hola! 💖</p>
+    </div>
 
     <div class="login-box">
         <h2>Formulario de Login</h2>
@@ -60,10 +63,14 @@
         }
 
         function mostrarBienvenida(event) {
-            event.preventDefault();
-            const usuario = document.getElementById("usuario").value;
-            document.getElementById("mensajeLogin").innerText =
-                "Bienvenido, " + usuario + " 👋";
+        event.preventDefault();
+        const usuario = document.getElementById("usuario").value;
+
+        document.getElementById("mensajeLogin").innerText =
+            "Bienvenido, " + usuario + " 👋";
+
+        document.getElementById("textoSaludo").innerText =
+            "🌸 Hola " + usuario + " 💖";
         }
 
         function validarFormulario() {
@@ -73,6 +80,15 @@
             
             boton.disabled = !(usuario !== "" && password !== "");
         }
+
+        setInterval(() => {
+        const mascota = document.getElementById("mascota");
+        mascota.innerText = "(◕‿◕)";
+        setTimeout(() => {
+            mascota.innerText = "(◕‿-)";
+        }, 200);
+         }, 3000);
+
     </script>
 
 </body>
