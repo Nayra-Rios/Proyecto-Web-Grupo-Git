@@ -1,3 +1,6 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -9,14 +12,17 @@ body {
     transition: background-color 0.3s ease;
 }
 
-
-/* Títulos */
+/* =========================
+   TÍTULOS
+========================= */
 h1 {
     color: #2c3e50;
     margin-bottom: 20px;
 }
 
-/* Botones */
+/* =========================
+   BOTONES GENERALES
+========================= */
 button {
     padding: 10px 20px;
     background-color: #d28bb5; /* rosado elegante */
@@ -24,7 +30,7 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
 button:hover {
@@ -38,26 +44,14 @@ button:active {
     transition: 0.1s;
 }
 
-.btn-login {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #d28bb5; 
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-.btn-login:hover {
-    background-color: #c276a6;
-    transform: scale(1.05);
-}
-
+/* =========================
+   BOTÓN LOGIN
+========================= */
+.btn-login,
 .btn-volver {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #d28bb5; 
+    background-color: #d28bb5;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -66,12 +60,15 @@ button:active {
     margin-top: 15px;
 }
 
+.btn-login:hover,
 .btn-volver:hover {
     background-color: #c276a6;
     transform: scale(1.05);
 }
 
-/* Caja principal (login / proyecto) */
+/* =========================
+   CAJA LOGIN
+========================= */
 .login-box {
     background: white;
     padding: 30px;
@@ -82,19 +79,6 @@ button:active {
     margin: auto;
 }
 
-/* Footer */
-footer {
-    margin-top: 40px;
-    padding: 20px 0;
-    font-size: 14px;
-    color: #666;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-/* Cajita rosada del login */
 .cajita-login {
     background-color: #fde2ea;
     padding: 25px;
@@ -103,7 +87,9 @@ footer p {
     margin-top: 15px;
 }
 
-/* Cajita de información del index */
+/* =========================
+   INFO BOX INDEX
+========================= */
 .info-box {
     background-color: #f8f9fd;
     border-left: 6px solid #d28bb5;
@@ -112,13 +98,13 @@ footer p {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .info-box:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    background-color: #f0f4ff; /* leve cambio de fondo */
+    background-color: #f0f4ff;
 }
 
 .info-box h3 {
@@ -131,7 +117,9 @@ footer p {
     color: #555;
 }
 
-/* Tip bonito del login */
+/* =========================
+   LOGIN TIP
+========================= */
 .login-tip {
     margin-top: 15px;
     background-color: #fff0f6;
@@ -140,21 +128,30 @@ footer p {
     font-size: 14px;
     color: #555;
 }
-/* Estado deshabilitado botón login */
+
+/* =========================
+   BOTÓN DESHABILITADO LOGIN
+========================= */
 #btnIngresar:disabled {
     background-color: #ccc;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
 }
-/* Efecto focus en inputs del login */
+
+/* =========================
+   INPUT FOCUS LOGIN
+========================= */
 .login-box input:focus {
     outline: none;
     border: 2px solid #d28bb5;
     box-shadow: 0 0 8px rgba(210, 139, 181, 0.5);
     transition: 0.3s ease;
 }
-/* Animación mensaje login */
+
+/* =========================
+   MENSAJE LOGIN ANIMADO
+========================= */
 .mensaje {
     margin-top: 15px;
     font-weight: bold;
@@ -167,7 +164,10 @@ footer p {
     opacity: 1;
     transform: translateY(0);
 }
-/* Animación del contador */
+
+/* =========================
+   ANIMACIÓN CONTADOR
+========================= */
 #contador {
     font-weight: bold;
     transition: transform 0.2s ease;
@@ -177,16 +177,31 @@ footer p {
     transform: scale(1.2);
 }
 
-button {
-    padding: 8px 15px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+/* =========================
+   FOOTER
+========================= */
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    font-size: 14px;
+    color: #666;
 }
 
-button:hover {
-    transform: scale(1.05);
-    background-color: #4CAF50;
-    color: white;
+footer p {
+    margin: 5px 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .info-box {
+        margin: 20px;
+    }
 }
