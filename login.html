@@ -6,23 +6,25 @@
     <link rel="stylesheet" href="styless.css">
 </head>
 <body>
+
     <div id="saludoCute">
-    <span id="mascota">(◕‿◕)</span>
-    <p id="textoSaludo">🌸 Hola! 💖</p>
+        <span id="mascota">(◕‿◕)</span>
+        <p id="textoSaludo">🌸 Hola! 💖</p>
     </div>
 
     <div class="login-box">
         <h2>Formulario de Login</h2>
+        <p>✨ Ingresa tus datos para continuar ✨</p>
 
         <form onsubmit="mostrarBienvenida(event)">
 
             <!-- Cajita rosada de diseño -->
             <div class="cajita-login">
 
-                <input type="text" id="usuario" placeholder="Usuario" required oninput="validarFormulario()">
+                <input type="text" id="usuario" placeholder="👤 Usuario" required oninput="validarFormulario()">
                 <br><br>
 
-                <input type="password" id="password" placeholder="Contraseña" required 
+                <input type="password" id="password" placeholder="🔒 Contraseña" required 
                        oninput="validarFormulario(); verificarSeguridad()">
                 <br>
 
@@ -39,11 +41,15 @@
 
         </form>
 
+        <!-- Cajita extra bonita -->
+        <div class="login-tip">
+            💡 <strong>Tip:</strong> Usa una contraseña segura para proteger tu cuenta porfis 💕
+        </div>
 
         <p class="mensaje" id="mensajeLogin"></p>
 
         <br>
-        <a href="index.html">Volver al Inicio</a>
+        <a href="index.html">⬅ Volver al Inicio</a>
     </div>
 
     <script>
@@ -72,14 +78,14 @@
         }
 
         function mostrarBienvenida(event) {
-        event.preventDefault();
-        const usuario = document.getElementById("usuario").value;
+            event.preventDefault();
+            const usuario = document.getElementById("usuario").value;
 
-        document.getElementById("mensajeLogin").innerText =
-            "Bienvenido, " + usuario + " 👋";
+            document.getElementById("mensajeLogin").innerText =
+                "Bienvenido, " + usuario + " 👋";
 
-        document.getElementById("textoSaludo").innerText =
-            "🌸 Hola " + usuario + " 💖";
+            document.getElementById("textoSaludo").innerText =
+                "🌸 Hola " + usuario + " 💖";
         }
 
         function validarFormulario() {
@@ -91,12 +97,12 @@
         }
 
         setInterval(() => {
-        const mascota = document.getElementById("mascota");
-        mascota.innerText = "(◕‿◕)";
-        setTimeout(() => {
-            mascota.innerText = "(◕‿-)";
-        }, 200);
-         }, 3000);
+            const mascota = document.getElementById("mascota");
+            mascota.innerText = "(◕‿◕)";
+            setTimeout(() => {
+                mascota.innerText = "(◕‿-)";
+            }, 200);
+        }, 3000);
 
     </script>
 

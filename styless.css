@@ -84,3 +84,12 @@ footer p {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
+.login-tip {
+    margin-top: 15px;
+    background-color: #fff5f8;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
