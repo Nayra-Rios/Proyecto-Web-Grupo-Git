@@ -55,97 +55,118 @@
         let intervaloEscritura;
 
         function mostrarMensaje() {
-            const texto = "¡Gracias por hacer clic! 🚀";
-            const elemento = document.getElementById("mensaje");
+    alert("Hola Nayra 😊 Este proyecto está funcionando correctamente!");
+}
 
+function actualizarFecha() {
+    const dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+    const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+    const ahora = new Date();
+    const fechaTexto = `📅 Hoy es ${dias[ahora.getDay()]}, ${ahora.getDate()} de ${meses[ahora.getMonth()]} de ${ahora.getFullYear()}`;
+    document.getElementById("fecha").innerText = fechaTexto;
+}
+
+actualizarFecha();
+
+const anioActual = new Date().getFullYear();
+document.getElementById("anio").innerText = anioActual;
+
+let contador = 0;
+let intervaloEscritura;
+
+function mostrarMensaje() {
+    const texto = "¡Gracias por hacer clic! 🚀";
+    const elemento = document.getElementById("mensaje");
+    clearInterval(intervaloEscritura);
+    let i = 0;
+    intervaloEscritura = setInterval(() => {
+        elemento.innerText = texto.slice(0, i);
+        i++;
+        if (i > texto.length) {
             clearInterval(intervaloEscritura);
-            let i = 0;
-
-            intervaloEscritura = setInterval(() => {
-                elemento.innerText = texto.slice(0, i);
-                i++;
-                if (i > texto.length) {
-                    clearInterval(intervaloEscritura);
-                }
-            }, 50);
         }
+    }, 50);
+}
 
-        function contarClicks() {
-            contador++;
+function contarClicks() {
+    contador++;
+    const elemento = document.getElementById("contador");
+    elemento.innerText = "Has hecho " + contador + " clics";
+    elemento.classList.add("animar");
+    setTimeout(() => elemento.classList.remove("animar"), 200);
 
-            const elemento = document.getElementById("contador");
-            elemento.innerText = "Has hecho " + contador + " clics";
+    if (contador >= 10) {
+        elemento.style.color = "red";
+        elemento.innerText += " 🔥 ¡Eres imparable!";
+    } else if (contador >= 5) {
+        elemento.style.color = "orange";
+    } else {
+        elemento.style.color = "black";
+    }
+}
 
-            elemento.classList.add("animar");
-            setTimeout(() => elemento.classList.remove("animar"), 200);
+function resetContador() {
+    contador = 0;
+    const elemento = document.getElementById("contador");
+    elemento.innerText = "Has hecho 0 clics";
+    elemento.style.color = "black";
+}
 
-            if (contador >= 10) {
-                elemento.style.color = "red";
-                elemento.innerText += " 🔥 ¡Eres imparable!";
-            } else if (contador >= 5) {
-                elemento.style.color = "orange";
-            } else {
-                elemento.style.color = "black";
-            }
-        }
+function actualizarReloj() {
+    const ahora = new Date();
+    document.getElementById("reloj").innerText = ahora.toLocaleTimeString();
+}
 
+setInterval(actualizarReloj, 1000);
+actualizarReloj();
 
-        function resetContador() {
-            contador = 0;
-            const elemento = document.getElementById("contador");
-            elemento.innerText = "Has hecho 0 clics";
-            elemento.style.color = "black";
-        }
+const hora = new Date().getHours();
+let saludo;
+let mensaje;
 
+if (hora < 12) {
+    saludo = "☀️ Buenos días";
+    mensaje = "¡Hora de brillar con tus commits!";
+} else if (hora < 18) {
+    saludo = "🌤️ Buenas tardes";
+    mensaje = "¡A seguir aprendiendo y programando!";
+} else {
+    saludo = "🌙 Buenas noches";
+    mensaje = "¡Tiempo de descansar y soñar con código!";
+}
 
-        function actualizarReloj() {
-            const ahora = new Date();
-            document.getElementById("reloj").innerText = ahora.toLocaleTimeString();
-        }
+document.getElementById("saludo").innerText = saludo + " — " + mensaje;
 
-        setInterval(actualizarReloj, 1000);
+function mostrarBienvenida() {
+    const texto = "✨ Bienvenid@ al Proyecto Web de las Girls! ✨";
+    const elemento = document.getElementById("bienvenida");
+    let i = 0;
+    const intervalo = setInterval(() => {
+        elemento.innerText = texto.slice(0, i);
+        i++;
+        if (i > texto.length) clearInterval(intervalo);
+    }, 60);
+}
 
-        actualizarReloj();
+mostrarBienvenida();
 
-        const hora = new Date().getHours();
-        let saludo;
-        let mensaje;
+function actualizarHoraFooter() {
+    const ahora = new Date();
+    document.getElementById("horaFooter").innerText = 
+        "Hora actual: " + ahora.toLocaleTimeString();
+}
 
-        if (hora < 12) {
-            saludo = "☀️ Buenos días";
-            mensaje = "¡Hora de brillar con tus commits!";
-        } else if (hora < 18) {
-            saludo = "🌤️ Buenas tardes";
-            mensaje = "¡A seguir aprendiendo y programando!";
-        } else {
-            saludo = "🌙 Buenas noches";
-            mensaje = "¡Tiempo de descansar y soñar con código!";
-        }
+setInterval(actualizarHoraFooter, 1000);
+actualizarHoraFooter();
 
-        document.getElementById("saludo").innerText = saludo + " — " + mensaje;
-
-        
-        function mostrarBienvenida() {
-        const texto = "✨ Bienvenid@ al Proyecto Web de las Girls! ✨";
-        const elemento = document.getElementById("bienvenida");
-        let i = 0;
-
-        const intervalo = setInterval(() => {
-            elemento.innerText = texto.slice(0, i);
-            i++;
-            if (i > texto.length) clearInterval(intervalo);
-        }, 60);
-        }
-
-
-        mostrarBienvenida();
     </script>
 
 
     <footer>
-    <hr>
-    <p>© <span id="anio"></span> Proyecto Web - Grupo Git</p>
-    <p>Actividad</p>
+        <hr>
+        <p>© <span id="anio"></span> Proyecto Web - Grupo Git</p>
+        <p id="horaFooter"></p>
+        <p>Actividad</p>
     </footer>
 
     <script src="script.js"></script>

@@ -55,58 +55,38 @@
     <script>
 
         function togglePassword() {
-            const pass = document.getElementById("password");
-            pass.type = pass.type === "password" ? "text" : "password";
-        }
+    const pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
 
-        function verificarSeguridad() {
-            const password = document.getElementById("password").value;
-            const indicador = document.getElementById("seguridadPass");
+function verificarSeguridad() {
+    const password = document.getElementById("password").value;
+    const indicador = document.getElementById("seguridadPass");
 
-            if (password.length === 0) {
-                indicador.innerText = "";
-                indicador.style.color = "";
-            } 
-            else if (password.length < 4) {
-                indicador.innerText = "🔴 Contraseña débil";
-                indicador.style.color = "red";
-            } 
-            else if (password.length < 8) {
-                indicador.innerText = "🟡 Contraseña media";
-                indicador.style.color = "orange";
-            } 
-            else {
-                indicador.innerText = "🟢 Contraseña fuerte";
-                indicador.style.color = "green";
-            }
-        }
+    if (password.length === 0) {
+        indicador.innerText = "";
+        indicador.style.color = "";
+    } else if (password.length < 4) {
+        indicador.innerText = "🔴 Contraseña débil";
+        indicador.style.color = "red";
+    } else if (password.length < 8) {
+        indicador.innerText = "🟡 Contraseña media";
+        indicador.style.color = "orange";
+    } else {
+        indicador.innerText = "🟢 Contraseña fuerte";
+        indicador.style.color = "green";
+    }
+}
 
-        function mostrarBienvenida(event) {
-            event.preventDefault();
-            const usuario = document.getElementById("usuario").value;
-
-            document.getElementById("mensajeLogin").innerText =
-                "Bienvenido, " + usuario + " 👋";
-
-            document.getElementById("textoSaludo").innerText =
-                "🌸 Hola " + usuario + " 💖";
-        }
-
-        function validarFormulario() {
-            const usuario = document.getElementById("usuario").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const boton = document.getElementById("btnIngresar");
-            
-            boton.disabled = !(usuario !== "" && password !== "");
-        }
-
-        setInterval(() => {
-            const mascota = document.getElementById("mascota");
-            mascota.innerText = "(◕‿◕)";
-            setTimeout(() => {
-                mascota.innerText = "(◕‿-)";
-            }, 200);
-        }, 3000);
+function mostrarBienvenida(event) {
+    event.preventDefault();
+    const usuario = document.getElementById("usuario").value;
+    const mensaje = document.getElementById("mensajeLogin");
+    mensaje.innerText = "Bienvenido, " + usuario + " 👋";
+    mensaje.classList.add("mostrar");
+    document.getElementById("textoSaludo").innerText =
+        "🌸 Hola " + usuario + " 💖";
+}
 
     </script>
 
