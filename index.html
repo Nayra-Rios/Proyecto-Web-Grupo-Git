@@ -11,10 +11,29 @@
     <p>Este es un proyecto simple para practicar Git y GitHub.</p>
 
     <button onclick="mostrarMensaje()">Haz clic aquí</button>
+    <p id="mensaje"></p>
+
+    <h2>Contador de clics</h2>
+    <button onclick="contarClicks()">Contar</button>
+    <p id="contador">Has hecho 0 clics</p>
 
     <br><br>
     <a href="login.html">Ir al Login</a>
 
-    <script src="script.js"></script>
+    <script>
+        let contador = 0;
+
+        function mostrarMensaje() {
+            document.getElementById("mensaje").innerText = 
+                "¡Gracias por hacer clic! 🚀";
+        }
+
+        function contarClicks() {
+            contador++;
+            document.getElementById("contador").innerText = 
+                "Has hecho " + contador + " clics";
+        }
+    </script>
+
 </body>
 </html>
