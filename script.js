@@ -1,29 +1,115 @@
+let contador = 0;
+let intervaloEscritura;
+
+/* MENSAJE BOTÓN */
 function mostrarMensaje() {
-    alert("Hola Nayra 😊 Este proyecto está funcionando correctamente!");
+    const texto = "¡Gracias por hacer clic! 🚀";
+    const elemento = document.getElementById("mensaje");
+
+    clearInterval(intervaloEscritura);
+    let i = 0;
+
+    intervaloEscritura = setInterval(() => {
+        elemento.innerText = texto.slice(0, i);
+        i++;
+        if (i > texto.length) clearInterval(intervaloEscritura);
+    }, 50);
 }
+
+/* FECHA */
 function actualizarFecha() {
-    const dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+    const dias = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
     const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+
     const ahora = new Date();
+
     const fechaTexto = `📅 Hoy es ${dias[ahora.getDay()]}, ${ahora.getDate()} de ${meses[ahora.getMonth()]} de ${ahora.getFullYear()}`;
+
     document.getElementById("fecha").innerText = fechaTexto;
 }
 
 actualizarFecha();
 
-const anioActual = new Date().getFullYear();
-document.getElementById("anio").innerText = anioActual;
+/* AÑO FOOTER */
+document.getElementById("anio").innerText =
+    new Date().getFullYear();
 
-function mostrarBienvenida(event) {
-    event.preventDefault();
-    const usuario = document.getElementById("usuario").value;
-    const mensaje = document.getElementById("mensajeLogin");
+/* RELOJ */
+function actualizarReloj() {
+    document.getElementById("reloj").innerText =
+        new Date().toLocaleTimeString();
+}
 
-    mensaje.innerText = "Bienvenido, " + usuario + " 👋";
-    mensaje.classList.add("mostrar");
+setInterval(actualizarReloj, 1000);
+actualizarReloj();
 
-    document.getElementById("textoSaludo").innerText =
-        "🌸 Hola " + usuario + " 💖";
+/* CONTADOR */
+function contarClicks() {
+    contador++;
+
+    const elemento = document.getElementById("contador");
+    elemento.innerText = "Has hecho " + contador + " clics";
+
+    elemento.classList.add("animar");
+    setTimeout(() => elemento.classList.remove("animar"), 200);
+
+    if (contador >= 10) {
+        elemento.style.color = "red";
+        elemento.innerText += " 🔥 ¡Eres imparable!";
+    } else if (contador >= 5) {
+        elemento.style.color = "orange";
+    } else {
+        elemento.style.color = "black";
+    }
+}
+
+function resetContador() {
+    contador = 0;
+    const elemento = document.getElementById("contador");
+    elemento.innerText = "Has hecho 0 clics";
+    elemento.style.color = "black";
+}
+
+/* SALUDO SEGÚN HORA */
+const hora = new Date().getHours();
+let saludo;
+let mensaje;
+
+if (hora < 12) {
+    saludo = "☀️ Buenos días";
+    mensaje = "¡Hora de brillar con tus commits!";
+} else if (hora < 18) {
+    saludo = "🌤️ Buenas tardes";
+    mensaje = "¡A seguir aprendiendo y programando!";
+} else {
+    saludo = "🌙 Buenas noches";
+    mensaje = "¡Tiempo de descansar y soñar con código!";
+}
+
+document.getElementById("saludo").innerText =
+    saludo + " — " + mensaje;
+
+/* BIENVENIDA */
+function mostrarBienvenida() {
+    const texto = "✨ Bienvenid@ al Proyecto Web de las Girls! ✨";
+    const elemento = document.getElementById("bienvenida");
+
+    let i = 0;
+
+    const intervalo = setInterval(() => {
+        elemento.innerText = texto.slice(0, i);
+        i++;
+        if (i > texto.length) clearInterval(intervalo);
+    }, 60);
 }
 
 mostrarBienvenida();
+
+/* HORA FOOTER */
+function actualizarHoraFooter() {
+    document.getElementById("horaFooter").innerText =
+        "Hora actual: " + new Date().toLocaleTimeString();
+}
+
+setInterval(actualizarHoraFooter, 1000);
+actualizarHoraFooter();
