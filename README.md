@@ -20,5 +20,3 @@ Practicar trabajo colaborativo usando Git:
 - git push
 - git pull
 
-## actualizacion de belen
-este cambio fue realizado por belen 
