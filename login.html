@@ -30,6 +30,11 @@
     </div>
 
     <script>
+        // Enfocar automáticamente el input usuario
+        window.onload = function() {
+            document.getElementById("usuario").focus();
+        };
+
         function togglePassword() {
             const pass = document.getElementById("password");
             pass.type = pass.type === "password" ? "text" : "password";
@@ -37,9 +42,24 @@
 
         function mostrarBienvenida(event) {
             event.preventDefault();
-            const usuario = document.getElementById("usuario").value;
-            document.getElementById("mensajeLogin").innerText =
-                "Bienvenido, " + usuario + " 👋";
+
+            const usuario = document.getElementById("usuario").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const mensaje = document.getElementById("mensajeLogin");
+
+            if (password.length < 6) {
+                mensaje.style.color = "red";
+                mensaje.innerText = "La contraseña debe tener al menos 6 caracteres ⚠️";
+                return;
+            }
+
+            mensaje.style.color = "green";
+            mensaje.innerText = "Bienvenido, " + usuario + " 👋";
+
+            // Limpiar campos después de login
+            document.getElementById("usuario").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("btnIngresar").disabled = true;
         }
 
         function validarFormulario() {
