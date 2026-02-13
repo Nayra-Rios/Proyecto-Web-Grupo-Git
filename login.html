@@ -14,7 +14,11 @@
             <input type="text" id="usuario" placeholder="Usuario" required oninput="validarFormulario()">
             <br><br>
 
-            <input type="password" id="password" placeholder="Contraseña" required oninput="validarFormulario()">
+            <input type="password" id="password" placeholder="Contraseña" required 
+                   oninput="validarFormulario(); verificarSeguridad()">
+            <br>
+
+            <small id="seguridadPass"></small>
             <br>
 
             <input type="checkbox" onclick="togglePassword()"> Mostrar contraseña
@@ -30,36 +34,35 @@
     </div>
 
     <script>
-        // Enfocar automáticamente el input usuario
-        window.onload = function() {
-            document.getElementById("usuario").focus();
-        };
-
+        
         function togglePassword() {
             const pass = document.getElementById("password");
             pass.type = pass.type === "password" ? "text" : "password";
         }
 
+        function verificarSeguridad() {
+            const password = document.getElementById("password").value;
+            const indicador = document.getElementById("seguridadPass");
+
+            if (password.length === 0) {
+                indicador.innerText = "";
+            } 
+            else if (password.length < 4) {
+                indicador.innerText = "🔴 Contraseña débil";
+            } 
+            else if (password.length < 8) {
+                indicador.innerText = "🟡 Contraseña media";
+            } 
+            else {
+                indicador.innerText = "🟢 Contraseña fuerte";
+            }
+        }
+
         function mostrarBienvenida(event) {
             event.preventDefault();
-
-            const usuario = document.getElementById("usuario").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const mensaje = document.getElementById("mensajeLogin");
-
-            if (password.length < 6) {
-                mensaje.style.color = "red";
-                mensaje.innerText = "La contraseña debe tener al menos 6 caracteres ⚠️";
-                return;
-            }
-
-            mensaje.style.color = "green";
-            mensaje.innerText = "Bienvenido, " + usuario + " 👋";
-
-            // Limpiar campos después de login
-            document.getElementById("usuario").value = "";
-            document.getElementById("password").value = "";
-            document.getElementById("btnIngresar").disabled = true;
+            const usuario = document.getElementById("usuario").value;
+            document.getElementById("mensajeLogin").innerText =
+                "Bienvenido, " + usuario + " 👋";
         }
 
         function validarFormulario() {
