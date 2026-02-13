@@ -1,39 +1,55 @@
-<!-- Cambios destacados: -->
-<!-- 1. Agregado atributo disabled al botón inicialmente -->
-<!-- 2. Se agregó evento input para activar/desactivar botón -->
-<!-- 3. Función validarFormulario() que controla el estado -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
 
-<form onsubmit="mostrarBienvenida(event)">
-    <input type="text" id="usuario" placeholder="Usuario" required oninput="validarFormulario()"><br><br>
-    <input type="password" id="password" placeholder="Contraseña" required oninput="validarFormulario()">
-    <br>
-    <input type="checkbox" onclick="togglePassword()"> Mostrar contraseña
-    <br><br>
-    <button type="submit" id="btnIngresar" disabled>Ingresar</button>
-</form>
+    <div class="login-box">
+        <h2>Formulario de Login</h2>
 
-<script>
-    function togglePassword() {
-        const pass = document.getElementById("password");
-        pass.type = pass.type === "password" ? "text" : "password";
-    }
+        <form onsubmit="mostrarBienvenida(event)">
+            <input type="text" id="usuario" placeholder="Usuario" required oninput="validarFormulario()">
+            <br><br>
 
-    function mostrarBienvenida(event) {
-        event.preventDefault();
-        const usuario = document.getElementById("usuario").value;
-        document.getElementById("mensajeLogin").innerText =
-            "Bienvenido, " + usuario + " 👋";
-    }
+            <input type="password" id="password" placeholder="Contraseña" required oninput="validarFormulario()">
+            <br>
 
-    function validarFormulario() {
-        const usuario = document.getElementById("usuario").value.trim();
-        const password = document.getElementById("password").value.trim();
-        const boton = document.getElementById("btnIngresar");
-        
-        if (usuario !== "" && password !== "") {
-            boton.disabled = false;
-        } else {
-            boton.disabled = true;
+            <input type="checkbox" onclick="togglePassword()"> Mostrar contraseña
+            <br><br>
+
+            <button type="submit" id="btnIngresar" disabled>Ingresar</button>
+        </form>
+
+        <p class="mensaje" id="mensajeLogin"></p>
+
+        <br>
+        <a href="index.html">Volver al Inicio</a>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const pass = document.getElementById("password");
+            pass.type = pass.type === "password" ? "text" : "password";
         }
-    }
-</script>
+
+        function mostrarBienvenida(event) {
+            event.preventDefault();
+            const usuario = document.getElementById("usuario").value;
+            document.getElementById("mensajeLogin").innerText =
+                "Bienvenido, " + usuario + " 👋";
+        }
+
+        function validarFormulario() {
+            const usuario = document.getElementById("usuario").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const boton = document.getElementById("btnIngresar");
+            
+            boton.disabled = !(usuario !== "" && password !== "");
+        }
+    </script>
+
+</body>
+</html>
