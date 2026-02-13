@@ -65,15 +65,19 @@
 
             if (password.length === 0) {
                 indicador.innerText = "";
+                indicador.style.color = "";
             } 
             else if (password.length < 4) {
                 indicador.innerText = "🔴 Contraseña débil";
+                indicador.style.color = "red";
             } 
             else if (password.length < 8) {
                 indicador.innerText = "🟡 Contraseña media";
+                indicador.style.color = "orange";
             } 
             else {
                 indicador.innerText = "🟢 Contraseña fuerte";
+                indicador.style.color = "green";
             }
         }
 
