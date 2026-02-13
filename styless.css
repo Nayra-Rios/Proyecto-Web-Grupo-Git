@@ -2,10 +2,13 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f2f2f2;
+    margin: 0;                 /* NUEVO */
+    padding: 20px;             /* NUEVO */
 }
 
 h1 {
     color: #2c3e50;
+    margin-bottom: 20px;       /* NUEVO */
 }
 
 button {
@@ -14,8 +17,11 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 8px;        /* NUEVO */
+    transition: 0.3s;          /* NUEVO */
 }
 
 button:hover {
     background-color: #2980b9;
+    transform: scale(1.05);    /* NUEVO */
 }
