@@ -33,6 +33,22 @@ button:active {
     transition: 0.1s;
 }
 
+.btn-login {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #d28bb5; 
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    background-color: #c276a6;
+    transform: scale(1.05);
+}
+
 /* Caja principal (login / proyecto) */
 .login-box {
     background: white;
