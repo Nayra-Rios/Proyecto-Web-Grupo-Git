@@ -26,6 +26,7 @@
 
     <h2>Contador de clics</h2>
     <button onclick="contarClicks()">Contar</button>
+    <button onclick="resetContador()">Reiniciar contador</button>
     <p id="contador">Has hecho 0 clics</p>
 
     <div class="info-box">
@@ -81,7 +82,16 @@
         } else {
             elemento.style.color = "black";
         }
-}
+
+       
+        }
+
+        function resetContador() {
+            contador = 0;
+            const elemento = document.getElementById("contador");
+            elemento.innerText = "Has hecho 0 clics";
+            elemento.style.color = "black";
+        }
 
 
         function actualizarReloj() {
