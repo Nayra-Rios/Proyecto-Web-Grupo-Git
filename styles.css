@@ -140,3 +140,10 @@ footer p {
     font-size: 14px;
     color: #555;
 }
+/* Estado deshabilitado botón login */
+#btnIngresar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
