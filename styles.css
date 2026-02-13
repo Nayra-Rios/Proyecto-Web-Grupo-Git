@@ -176,3 +176,17 @@ footer p {
 #contador.animar {
     transform: scale(1.2);
 }
+
+button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #4CAF50;
+    color: white;
+}
