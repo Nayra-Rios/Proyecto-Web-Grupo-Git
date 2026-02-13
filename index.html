@@ -26,10 +26,22 @@
 
     <script>
         let contador = 0;
+        let intervaloEscritura;
 
         function mostrarMensaje() {
-            document.getElementById("mensaje").innerText = 
-                "¡Gracias por hacer clic! 🚀";
+            const texto = "¡Gracias por hacer clic! 🚀";
+            const elemento = document.getElementById("mensaje");
+
+            clearInterval(intervaloEscritura);
+            let i = 0;
+
+            intervaloEscritura = setInterval(() => {
+                elemento.innerText = texto.slice(0, i);
+                i++;
+                if (i > texto.length) {
+                    clearInterval(intervaloEscritura);
+                }
+            }, 50);
         }
 
         function contarClicks() {
@@ -37,7 +49,7 @@
             document.getElementById("contador").innerText = 
                 "Has hecho " + contador + " clics";
         }
-
+        
 
         function actualizarReloj() {
             const ahora = new Date();
@@ -45,6 +57,7 @@
         }
 
         setInterval(actualizarReloj, 1000);
+
         actualizarReloj();
 
 
